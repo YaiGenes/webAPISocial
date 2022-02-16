@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SocialMedia.Infrastructure.Repositories
 {
-    public class PostRepository : IPostRepository
+    public class MongoRepo : IPostRepository
     {
         public async Task<IEnumerable<PostEntities>> GetPosts()
         {
@@ -16,7 +16,7 @@ namespace SocialMedia.Infrastructure.Repositories
             {
                 PostId = x,
                 UserId = x * 2,
-                Description = $"Description{x}",
+                Description = $"Description{x} inyectando a mongo",
                 CreatedDate = DateTime.Now,
                 Image = $"https://picsum.photos/id/{x*5}/200/300",
             });
