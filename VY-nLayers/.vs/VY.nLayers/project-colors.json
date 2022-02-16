@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8091bab9-d048-4d64-8549-88565a3eea5e": {
+      "ProjectGuid": "8091bab9-d048-4d64-8549-88565a3eea5e",
+      "DisplayName": "VY.nLayers.ConsoleApp",
+      "ColorIndex": 0
+    },
+    "98fe3171-aeb2-46d4-8ba6-3e21135bc541": {
+      "ProjectGuid": "98fe3171-aeb2-46d4-8ba6-3e21135bc541",
+      "DisplayName": "Business",
+      "ColorIndex": 1
+    },
+    "ff22884f-36c4-49f8-8ab0-ed0ca74e72f3": {
+      "ProjectGuid": "ff22884f-36c4-49f8-8ab0-ed0ca74e72f3",
+      "DisplayName": "Data",
+      "ColorIndex": 2
+    },
+    "c7795637-866c-4cb3-bdfe-afd942df70a5": {
+      "ProjectGuid": "c7795637-866c-4cb3-bdfe-afd942df70a5",
+      "DisplayName": "VY.nLayers.DTOs",
+      "ColorIndex": 3
+    },
+    "b8da1eb8-3e38-49de-bb9b-32dd0b2978cf": {
+      "ProjectGuid": "b8da1eb8-3e38-49de-bb9b-32dd0b2978cf",
+      "DisplayName": "VY.nLayers.Infrastructure",
+      "ColorIndex": 4
+    },
+    "7d1e3ac6-d4aa-4f05-b205-fc05d1fcb23f": {
+      "ProjectGuid": "7d1e3ac6-d4aa-4f05-b205-fc05d1fcb23f",
+      "DisplayName": "VY.nLayers.BL.Implementation",
+      "ColorIndex": 5
+    },
+    "8aba59a4-240f-431c-943f-e636fdc314d9": {
+      "ProjectGuid": "8aba59a4-240f-431c-943f-e636fdc314d9",
+      "DisplayName": "VY.nLayers.BL.Contracts",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

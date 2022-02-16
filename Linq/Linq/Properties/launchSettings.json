@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Linq": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\yaise\\Downloads\\order_example.json, C:\\Users\\yaise\\Downloads\\peopledata.json, C:\\Users\\yaise\\Downloads\\petData.json"
+    }
+  }
+}

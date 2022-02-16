@@ -1,0 +1,43 @@
+{
+  "Order": "PEDVK0001",
+  "Detail": [
+    {
+      "ComponentType": "Cilindro",
+      "Subcomponents": [
+        {
+          "Type": "Acero",
+          "Price": 35.83
+        },
+        {
+          "Type": "Aluminio",
+          "Price": 22.02
+        }
+      ],
+      "PriceIncrement": 120,
+      "NumComponents": 12,
+      "Color": "#RRGGBB",
+      "Tests": [ "Test1", "Test2" ]
+    },
+    {
+      "ComponentType": "Pistón",
+      "Subcomponents": [
+        {
+          "Type": "Aluminio",
+          "Price": 22.02
+        },
+        {
+          "Type": "Cobre",
+          "Price": 31.56
+        },
+        {
+          "Type": "Plastico",
+          "Price": 28.41
+        }
+      ],
+      "PriceIncrement": 120,
+      "NumComponents": 12,
+      "Color": "#RRGGBB",
+      "Tests": [ "Test1", "Test3" ]
+    }
+  ]
+}

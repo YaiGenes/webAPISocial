@@ -1,0 +1,14 @@
+C:\Users\yaise\source\repos\Single-Responsability-Principle\bin\Debug\netcoreapp3.1\Single-Responsability-Principle.exe
+C:\Users\yaise\source\repos\Single-Responsability-Principle\bin\Debug\netcoreapp3.1\Single-Responsability-Principle.deps.json
+C:\Users\yaise\source\repos\Single-Responsability-Principle\bin\Debug\netcoreapp3.1\Single-Responsability-Principle.runtimeconfig.json
+C:\Users\yaise\source\repos\Single-Responsability-Principle\bin\Debug\netcoreapp3.1\Single-Responsability-Principle.runtimeconfig.dev.json
+C:\Users\yaise\source\repos\Single-Responsability-Principle\bin\Debug\netcoreapp3.1\Single-Responsability-Principle.dll
+C:\Users\yaise\source\repos\Single-Responsability-Principle\bin\Debug\netcoreapp3.1\Single-Responsability-Principle.pdb
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.csproj.AssemblyReference.cache
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.AssemblyInfoInputs.cache
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.AssemblyInfo.cs
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.csproj.CoreCompileInputs.cache
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.dll
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.pdb
+C:\Users\yaise\source\repos\Single-Responsability-Principle\obj\Debug\netcoreapp3.1\Single-Responsability-Principle.genruntimeconfig.cache

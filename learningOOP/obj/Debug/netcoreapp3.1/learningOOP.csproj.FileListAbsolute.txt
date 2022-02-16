@@ -1,0 +1,14 @@
+C:\Users\yaise\source\repos\learningOOP\bin\Debug\netcoreapp3.1\learningOOP.exe
+C:\Users\yaise\source\repos\learningOOP\bin\Debug\netcoreapp3.1\learningOOP.deps.json
+C:\Users\yaise\source\repos\learningOOP\bin\Debug\netcoreapp3.1\learningOOP.runtimeconfig.json
+C:\Users\yaise\source\repos\learningOOP\bin\Debug\netcoreapp3.1\learningOOP.runtimeconfig.dev.json
+C:\Users\yaise\source\repos\learningOOP\bin\Debug\netcoreapp3.1\learningOOP.dll
+C:\Users\yaise\source\repos\learningOOP\bin\Debug\netcoreapp3.1\learningOOP.pdb
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.csproj.AssemblyReference.cache
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.AssemblyInfoInputs.cache
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.AssemblyInfo.cs
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.csproj.CoreCompileInputs.cache
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.dll
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.pdb
+C:\Users\yaise\source\repos\learningOOP\obj\Debug\netcoreapp3.1\learningOOP.genruntimeconfig.cache
