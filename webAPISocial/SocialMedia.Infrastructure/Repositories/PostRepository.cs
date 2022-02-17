@@ -1,4 +1,5 @@
-﻿using SocialMedia.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SocialMedia.Core.Entities;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Infrastructure.Data;
 using System;
@@ -18,10 +19,8 @@ namespace SocialMedia.Infrastructure.Repositories
         }
         public async Task<IEnumerable<PostEntities>> GetPosts()
         {
-            var posts = _context.Publicacion.ToList();
-            await Task.Delay(10);
+            var posts = await _context.Post.ToListAsync();
             return posts;
-
         }
     }
 }
