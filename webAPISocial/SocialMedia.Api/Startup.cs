@@ -29,7 +29,12 @@ namespace SocialMedia.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            //automapper to transform from entities to dtos
+            services.AddControllers().AddNewtonsoftJson(opt=>
+                opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+            //to avoid looping reference on api request
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddDbContext<SocialMediaContext>(opt => 
                 opt.UseSqlServer(Configuration.GetConnectionString("SocialMedia"))
