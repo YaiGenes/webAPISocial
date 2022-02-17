@@ -7,15 +7,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using SocialMedia.Core.Interfaces;
-using SocialMedia.Infrastructure.Data;
-using SocialMedia.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VY.SocialMedia.Data.Contracts.Interfaces;
+using VY.SocialMedia.Data.Implementation.Data;
+using VY.SocialMedia.Data.Implementation.Repositories;
 
-namespace SocialMedia.Api
+namespace VY.SocialMedia.AppWebApi
 {
     public class Startup
     {
@@ -31,12 +31,12 @@ namespace SocialMedia.Api
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             //automapper to transform from entities to dtos
-            services.AddControllers().AddNewtonsoftJson(opt=>
+            services.AddControllers().AddNewtonsoftJson(opt =>
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
             //to avoid looping reference on api request
             services.AddTransient<IPostRepository, PostRepository>();
-            services.AddDbContext<SocialMediaContext>(opt => 
+            services.AddDbContext<SocialMediaContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("SocialMedia"))
             );
         }

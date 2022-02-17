@@ -1,16 +1,12 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
-using SocialMedia.Core.DTOs;
-using SocialMedia.Core.Entities;
-using SocialMedia.Core.Interfaces;
-using SocialMedia.Infrastructure.Repositories;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using VY.SocialMedia.Data.Contracts.Entities;
+using VY.SocialMedia.Data.Contracts.Interfaces;
+using VY.SocialMedia.Dtos.DTOs;
 
-namespace SocialMedia.Api.Controllers
+namespace VY.SocialMedia.AppWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

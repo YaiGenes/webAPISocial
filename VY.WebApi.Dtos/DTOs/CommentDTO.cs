@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialMedia.Core.DTOs
+namespace VY.SocialMedia.Dtos.DTOs
 {
     public class CommentDTO
     {

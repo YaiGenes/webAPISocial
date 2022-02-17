@@ -3,11 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.Api", "SocialMedia.Api\SocialMedia.Api.csproj", "{C69CA429-544B-4727-8F6F-D5AA0B771753}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VY.SocialMedia.AppWebApi", "SocialMedia.Api\VY.SocialMedia.AppWebApi.csproj", "{C69CA429-544B-4727-8F6F-D5AA0B771753}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.Core", "SocialMedia.Core\SocialMedia.Core.csproj", "{46222A20-9A71-492B-982C-F3A6AC96251D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VY.SocialMedia.Data.Contracts", "SocialMedia.Core\VY.SocialMedia.Data.Contracts.csproj", "{46222A20-9A71-492B-982C-F3A6AC96251D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.Infrastructure", "SocialMedia.Infrastructure\SocialMedia.Infrastructure.csproj", "{7EC8E6C7-CF79-41FF-AC44-C76D5C388C2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VY.SocialMedia.Data.Implementation", "SocialMedia.Infrastructure\VY.SocialMedia.Data.Implementation.csproj", "{7EC8E6C7-CF79-41FF-AC44-C76D5C388C2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Application", "01.Application", "{CC7CD08C-DDA2-4C9B-BAA3-04A988938446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VY.SocialMedia.Dtos", "VY.WebApi.Dtos\VY.SocialMedia.Dtos.csproj", "{A7D93BAC-508B-40F0-B22B-087C0FB6ED50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Business", "02.Business", "{C77B788B-8E03-42A2-BE53-6758BB0C343A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Data", "03.Data", "{39500035-6F55-499D-B554-B40EFD86767B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Infrastructure", "04.Infrastructure", "{1CB6AF3C-AE88-4C1C-AF94-F8178D5CA34A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Dtos", "05.Dtos", "{7B77FC7C-BAC2-4434-8ECC-3157E8E9BBAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +39,19 @@ Global
 		{7EC8E6C7-CF79-41FF-AC44-C76D5C388C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EC8E6C7-CF79-41FF-AC44-C76D5C388C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EC8E6C7-CF79-41FF-AC44-C76D5C388C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D93BAC-508B-40F0-B22B-087C0FB6ED50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D93BAC-508B-40F0-B22B-087C0FB6ED50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D93BAC-508B-40F0-B22B-087C0FB6ED50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D93BAC-508B-40F0-B22B-087C0FB6ED50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C69CA429-544B-4727-8F6F-D5AA0B771753} = {CC7CD08C-DDA2-4C9B-BAA3-04A988938446}
+		{46222A20-9A71-492B-982C-F3A6AC96251D} = {39500035-6F55-499D-B554-B40EFD86767B}
+		{7EC8E6C7-CF79-41FF-AC44-C76D5C388C2C} = {39500035-6F55-499D-B554-B40EFD86767B}
+		{A7D93BAC-508B-40F0-B22B-087C0FB6ED50} = {7B77FC7C-BAC2-4434-8ECC-3157E8E9BBAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37420922-15E0-433E-BE01-CBB6D03A142A}

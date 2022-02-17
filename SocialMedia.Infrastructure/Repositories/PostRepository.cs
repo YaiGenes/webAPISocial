@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using SocialMedia.Core.Entities;
-using SocialMedia.Core.Interfaces;
-using SocialMedia.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using VY.SocialMedia.Data.Contracts.Entities;
+using VY.SocialMedia.Data.Contracts.Interfaces;
+using VY.SocialMedia.Data.Implementation.Data;
 
-namespace SocialMedia.Infrastructure.Repositories
+namespace VY.SocialMedia.Data.Implementation.Repositories
 {
     public class PostRepository : IPostRepository
     {
@@ -23,7 +23,7 @@ namespace SocialMedia.Infrastructure.Repositories
 
         public async Task<PostEntities> GetPostById(int id)
         {
-            var post = await _context.Post.FirstOrDefaultAsync(x=> x.PostId == id);
+            var post = await _context.Post.FirstOrDefaultAsync(x => x.PostId == id);
             return post;
         }
 

@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SocialMedia.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using VY.SocialMedia.Data.Contracts.Entities;
 
-namespace SocialMedia.Infrastructure.Data.Configuration
+namespace VY.SocialMedia.Data.Implementation.Data.Configuration
 {
     public class CommentConfiguration : IEntityTypeConfiguration<CommentEntities>
     {

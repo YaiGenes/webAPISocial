@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using SocialMedia.Core.DTOs;
-using SocialMedia.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using VY.SocialMedia.Data.Contracts.Entities;
+using VY.SocialMedia.Dtos.DTOs;
 
-namespace SocialMedia.Infrastructure.Mappings
+namespace VY.SocialMedia.Data.Implementation.Mappings
 {
     public class AutomapperProfile : Profile
     {

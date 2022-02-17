@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SocialMedia.Api
+namespace VY.SocialMedia.AppWebApi
 {
     public class Program
     {
