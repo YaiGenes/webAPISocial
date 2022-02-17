@@ -10,5 +10,6 @@ namespace SocialMedia.Core.Interfaces
     {
         Task<IEnumerable<PostEntities>> GetPosts();
         Task<PostEntities> GetPostById(int id);
+        Task InsertPost(PostEntities post);
     }
 }
