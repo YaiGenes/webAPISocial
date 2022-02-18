@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SocialMedia.Core\VY.SocialMedia.Data.Contracts.csproj" />
-    <ProjectReference Include="..\SocialMedia.Infrastructure\VY.SocialMedia.Data.Implementation.csproj" />
+    <ProjectReference Include="..\VY.SocialMedia.Business.Contracts\VY.SocialMedia.Business.Contracts.csproj" />
+    <ProjectReference Include="..\VY.SocialMedia.Business.Implementation\VY.SocialMedia.Business.Implementation.csproj" />
   </ItemGroup>
 
 

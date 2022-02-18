@@ -2,7 +2,7 @@
 using VY.SocialMedia.Data.Contracts.Entities;
 using VY.SocialMedia.Dtos.DTOs;
 
-namespace VY.SocialMedia.Data.Implementation.Mappings
+namespace VY.SocialMedia.Business.Implementation.Mappings
 {
     public class AutomapperProfile : Profile
     {
