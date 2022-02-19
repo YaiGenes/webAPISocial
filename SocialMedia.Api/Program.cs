@@ -16,5 +16,6 @@ namespace VY.SocialMedia.AppWebApi
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-    }
+   }
+
 }

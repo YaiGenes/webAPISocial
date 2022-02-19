@@ -32,5 +32,27 @@ namespace VY.SocialMedia.Data.Implementation.Repositories
             _context.Post.Add(post);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<bool> UpdatePost(PostEntities post)
+        {
+            var currentPost = await GetPostById(post.PostId);
+            currentPost.CreatedDate = post.CreatedDate;
+            currentPost.Description = post.Description;
+            currentPost.Image = post.Image;
+            currentPost.UserId = post.UserId;
+
+            int rows = await _context.SaveChangesAsync();
+            return rows > 0;
+        }
+
+        public async Task<bool> DeletePost(int id)
+        {
+            var currentPost = await GetPostById(id);
+
+            _context.Post.Remove(currentPost);
+
+            int rows = await _context.SaveChangesAsync();
+            return rows > 0;
+        }
     }
 }

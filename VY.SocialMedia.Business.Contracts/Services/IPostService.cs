@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using VY.SocialMedia.Data.Contracts.Entities;
 
-namespace VY.SocialMedia.Data.Contracts.Interfaces
+namespace VY.SocialMedia.Business.Contracts.Services
 {
-    public interface IPostRepository
+    public interface IPostService
     {
         Task<IEnumerable<PostEntities>> GetPosts();
         Task<PostEntities> GetPostById(int id);
