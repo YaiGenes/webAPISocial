@@ -8,17 +8,14 @@ namespace VY.SocialMedia.Data.Implementation.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SocialMediaContext _context;
-        private readonly IRepository<PostEntities> _postRepository;
+        private readonly IPostRepository _postRepository;
         private readonly IRepository<UserEntities> _userRepository;
         private readonly IRepository<CommentEntities> _commentRepository;
-        public UnitOfWork(SocialMediaContext context, IRepository<PostEntities> postRepository, IRepository<UserEntities> userRepository, IRepository<CommentEntities> commentRepository)
+        public UnitOfWork(SocialMediaContext context)
         {
             _context = context;
-            _postRepository = postRepository;
-            _userRepository = userRepository;
-            _commentRepository = commentRepository;
         }
-        public IRepository<PostEntities> PostRepository => _postRepository ?? new BaseRepository<PostEntities>(_context);
+        public IPostRepository PostRepository => _postRepository ?? new PostRepository(_context);
 
         public IRepository<UserEntities> UserRepository => _userRepository ?? new BaseRepository<UserEntities>(_context);
 

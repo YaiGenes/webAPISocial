@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using VY.SocialMedia.Business.Contracts.Services;
+using VY.SocialMedia.Business.Implementation.Exceptions;
 using VY.SocialMedia.Data.Contracts.Entities;
 using VY.SocialMedia.Data.Contracts.Interfaces;
-using VY.SocialMedia.Data.Implementation.Repositories;
 
 namespace VY.SocialMedia.Business.Implementation.Services
 {
@@ -20,6 +21,7 @@ namespace VY.SocialMedia.Business.Implementation.Services
         public async Task<bool> DeletePost(int id)
         {
             await _unitOfWork.PostRepository.Delete(id);
+
             return true;
         }
 
@@ -39,16 +41,28 @@ namespace VY.SocialMedia.Business.Implementation.Services
 
             if (user == null)
             {
-                throw new Exception("User doent exist");
+                throw new BusinessException("User doent exist");
             }
 
-            if(post.Description.Contains("Sex"))
+            var userPosts = await _unitOfWork.PostRepository.GetPostByUser(post.UserId);
+
+            if (userPosts.Count() < 10)
             {
-                throw new Exception("Content not appropiate");
+                var lastPost = userPosts.OrderByDescending(x => x.CreatedDate).FirstOrDefault();
+
+                if((DateTime.Now - lastPost.CreatedDate).TotalDays < 7)
+                {
+                    throw new BusinessException("You are not able to publish within this week");
+                }
+            }
+
+            if(post.Description.Contains("sex"))
+            {
+                throw new BusinessException("Content not appropiate");
             }
             
             await _unitOfWork.PostRepository.Add(post);
-            
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<bool> UpdatePost(PostEntities post)

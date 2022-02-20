@@ -8,7 +8,7 @@ namespace VY.SocialMedia.Data.Contracts.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<PostEntities> PostRepository { get; }
+        IPostRepository PostRepository { get; }
         IRepository<UserEntities> UserRepository { get; }
         IRepository<CommentEntities> CommentRepository { get; }
 

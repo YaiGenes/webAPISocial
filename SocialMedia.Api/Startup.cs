@@ -31,14 +31,17 @@ namespace VY.SocialMedia.AppWebApi
             //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddAutoMapper(typeof(AutomapperProfile));
             //automapper to transform from entities to dtos
-            services.AddControllers().AddNewtonsoftJson(opt =>
+            services.AddControllers( options =>
+            {
+                options.Filters.Add<GlobalExceptionFilter>();
+            }).AddNewtonsoftJson(opt =>
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
             //to avoid looping reference on api request
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 
             services.AddDbContext<SocialMediaContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("SocialMedia"))
