@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using VY.SocialMedia.AppWebApi.Responses;
+using VY.SocialMedia.Business.Contracts.Services;
 using VY.SocialMedia.Data.Contracts.Entities;
 using VY.SocialMedia.Data.Contracts.Interfaces;
 using VY.SocialMedia.Dtos.DTOs;
@@ -13,19 +14,19 @@ namespace VY.SocialMedia.AppWebApi.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPostRepository _postRepository;
+        private readonly IPostService _postService;
         private readonly IMapper _mapper;
 
-        public PostController(IPostRepository postRepository, IMapper mapper)
+        public PostController(IPostService postRepository, IMapper mapper)
         {
-            _postRepository = postRepository;
+            _postService = postRepository;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetPost()
+        public IActionResult GetPost()
         {
-            var posts = await _postRepository.GetPosts();
+            var posts = _postService.GetPosts();
             var postDto = _mapper.Map<IEnumerable<PostDTO>>(posts);
 
             var response = new ApiResponse<IEnumerable<PostDTO>>(postDto);
@@ -36,7 +37,7 @@ namespace VY.SocialMedia.AppWebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPostById(int id)
         {
-            var post = await _postRepository.GetPostById(id);
+            var post = await _postService.GetPostById(id);
             var postDto = _mapper.Map<PostDTO>(post);
 
             var response = new ApiResponse<PostDTO>(postDto);
@@ -48,7 +49,7 @@ namespace VY.SocialMedia.AppWebApi.Controllers
         public async Task<IActionResult> Post(PostDTO postDto)
         {
             var post = _mapper.Map<PostEntities>(postDto);
-            await _postRepository.InsertPost(post);
+            await _postService.InsertPost(post);
 
 
             postDto = _mapper.Map<PostDTO>(post);
@@ -62,9 +63,9 @@ namespace VY.SocialMedia.AppWebApi.Controllers
         public async Task<IActionResult> Put(int id, PostDTO postDto)
         {
             var post = _mapper.Map<PostEntities>(postDto);
-            post.PostId = id;
+            post.Id = id;
 
-            var result = await _postRepository.UpdatePost(post);
+            var result = await _postService.UpdatePost(post);
             var response = new ApiResponse<bool>(result);
 
             return Ok(response);
@@ -73,7 +74,7 @@ namespace VY.SocialMedia.AppWebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await _postRepository.DeletePost(id);
+            var result = await _postService.DeletePost(id);
             var response = new ApiResponse<bool>(result);
 
             return Ok(response);

@@ -7,9 +7,8 @@ using System.Collections.Generic;
 
 namespace VY.SocialMedia.Data.Contracts.Entities
 {
-    public partial class CommentEntities
+    public partial class CommentEntities : BaseEntity
     {
-        public int CommentId { get; set; }
         public int PostId { get; set; }
         public int UserId { get; set; }
         public string Description { get; set; }

@@ -11,9 +11,10 @@ namespace VY.SocialMedia.Data.Implementation.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<CommentEntities> buider)
         {
-            buider.HasKey(e => e.CommentId);
+            buider.HasKey(e => e.Id);
 
-            buider.Property(e => e.CommentId).ValueGeneratedNever();
+            buider.Property(e => e.Id).ValueGeneratedNever();
+            buider.Property(e => e.Id).HasColumnName("commentId");
 
             buider.Property(e => e.Description)
                 .IsRequired()

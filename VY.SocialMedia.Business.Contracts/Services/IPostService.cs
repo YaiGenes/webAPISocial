@@ -6,7 +6,7 @@ namespace VY.SocialMedia.Business.Contracts.Services
 {
     public interface IPostService
     {
-        Task<IEnumerable<PostEntities>> GetPosts();
+        IEnumerable<PostEntities> GetPosts();
         Task<PostEntities> GetPostById(int id);
         Task InsertPost(PostEntities post);
         Task<bool> UpdatePost(PostEntities post);

@@ -1,46 +1,61 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using VY.SocialMedia.Business.Contracts.Services;
 using VY.SocialMedia.Data.Contracts.Entities;
 using VY.SocialMedia.Data.Contracts.Interfaces;
+using VY.SocialMedia.Data.Implementation.Repositories;
 
 namespace VY.SocialMedia.Business.Implementation.Services
 {
     public class PostService : IPostService
     {
-        private readonly IPostRepository _postRepository;
-        public PostService(IPostRepository postRepository)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public PostService(IUnitOfWork unitOfWork)
         {
-            _postRepository = postRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<bool> DeletePost(int id)
         {
-            return await _postRepository.DeletePost(id);
+            await _unitOfWork.PostRepository.Delete(id);
+            return true;
         }
 
         public async Task<PostEntities> GetPostById(int id)
         {
-            return await _postRepository.GetPostById(id);
+            return await _unitOfWork.PostRepository.GetById(id);
         }
 
-        public async Task<IEnumerable<PostEntities>> GetPosts()
+        public IEnumerable<PostEntities> GetPosts()
 {
-            return await _postRepository.GetPosts();
+            return _unitOfWork.PostRepository.GetAll();
         }
 
         public async Task InsertPost(PostEntities post)
         {
-            await _postRepository.InsertPost(post);
+            var user = await _unitOfWork.UserRepository.GetById(post.UserId);
+
+            if (user == null)
+            {
+                throw new Exception("User doent exist");
+            }
+
+            if(post.Description.Contains("Sex"))
+            {
+                throw new Exception("Content not appropiate");
+            }
+            
+            await _unitOfWork.PostRepository.Add(post);
+            
         }
 
         public async Task<bool> UpdatePost(PostEntities post)
         {
-            return await _postRepository.UpdatePost(post);
+            _unitOfWork.PostRepository.Update(post);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
         }
     }
 }

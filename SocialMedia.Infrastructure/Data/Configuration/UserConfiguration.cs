@@ -11,7 +11,8 @@ namespace VY.SocialMedia.Data.Implementation.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<UserEntities> builder)
         {
-            builder.HasKey(e => e.UserId);
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id).HasColumnName("userId");
 
             builder.Property(e => e.Surname)
                 .IsRequired()

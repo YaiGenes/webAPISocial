@@ -7,14 +7,13 @@ using System.Collections.Generic;
 
 namespace VY.SocialMedia.Data.Contracts.Entities
 {
-    public partial class PostEntities
+    public partial class PostEntities : BaseEntity
     {
         public PostEntities()
         {
             Comments = new HashSet<CommentEntities>();
         }
 
-        public int PostId { get; set; }
         public int UserId { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Description { get; set; }

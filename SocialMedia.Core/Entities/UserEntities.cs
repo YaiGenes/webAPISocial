@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace VY.SocialMedia.Data.Contracts.Entities
 {
-    public partial class UserEntities
+    public partial class UserEntities : BaseEntity
     {
         public UserEntities()
         {
@@ -15,7 +15,6 @@ namespace VY.SocialMedia.Data.Contracts.Entities
             Posts = new HashSet<PostEntities>();
         }
 
-        public int UserId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }

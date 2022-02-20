@@ -6,7 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using VY.SocialMedia.Business.Contracts.Services;
 using VY.SocialMedia.Business.Implementation.Mappings;
+using VY.SocialMedia.Business.Implementation.Services;
 using VY.SocialMedia.Business.Implementation.Validations;
 using VY.SocialMedia.Data.Contracts.Interfaces;
 using VY.SocialMedia.Data.Implementation.Data;
@@ -33,7 +35,11 @@ namespace VY.SocialMedia.AppWebApi
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
             //to avoid looping reference on api request
-            services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+
+
             services.AddDbContext<SocialMediaContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("SocialMedia"))
             );

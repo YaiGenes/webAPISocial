@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SocialMedia.Core\VY.SocialMedia.Data.Contracts.csproj" />
     <ProjectReference Include="..\VY.WebApi.Dtos\VY.SocialMedia.Dtos.csproj" />
   </ItemGroup>
 
